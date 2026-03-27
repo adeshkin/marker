@@ -97,7 +97,7 @@ class OcrBuilder(BaseBuilder):
         if self.recognition_batch_size is not None:
             return self.recognition_batch_size
         elif settings.TORCH_DEVICE_MODEL == "cuda":
-            return 48
+            return 32 # 48
         elif settings.TORCH_DEVICE_MODEL == "mps":
             return 16
         return 32
